@@ -1,4 +1,4 @@
-# 🐻🐱 BKI-Applications – Development Hub
+# BKI-Applications – Development Hub
 
 Welcome to the **BKI-Applications Development Repository**.  
 This is the central workspace for building, testing, and documenting **tabletop RPG tools, content, and infrastructure** for the BKI ecosystem.  
@@ -16,7 +16,7 @@ This is the central workspace for building, testing, and documenting **tabletop 
 
 ---
 
-## 🚀 Current Focus
+## Current Focus
 - **Languages**: Publishing Elven & Dwarven dictionaries in PDF/Word & InDesign module formats.  
 - **Monster Manual**: Building a 200+ entry compendium with artwork, statblocks, and lore.  
 - **Miniatures**: STL/OBJ/BLEND deliverables for BKI store (optimized for resin printing).  

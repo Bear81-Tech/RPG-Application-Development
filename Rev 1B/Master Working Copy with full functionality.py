@@ -1,101 +1,7 @@
-def pick_character_feats(level, race, feats):
-    """
-    Randomly selects feats ensuring prerequisites are met.
-    Emits [DEBUG] logs for both accepted and rejected feats with reasons.
-    Uses prerequisite text from either 'property' or 'prerequisite' fields.
-    """
-    import re, random
-
-    # how many feats to pick (PF1e baseline + human bonus)
-    num_feats = (level // 2) + 1 + (1 if str(race).lower() == 'human' else 0)
-
-    # cache all feat names to detect dependencies
-    all_feat_names = set()
-    for f in feats:
-        nm = (f.get('title') or f.get('name') or '').strip().lower()
-        if nm:
-            all_feat_names.add(nm)
-
-    chosen = []
-    chosen_set = set()
-
-    def prereq_met(feat):
-        reasons = []
-        ok = True
-
-        # normalize text
-        prereq = (feat.get('property') or feat.get('prerequisite') or '').strip()
-        prereq_low = prereq.lower()
-
-        if not prereq or prereq_low in ('none', ''):
-            reasons.append('no prerequisites')
-            return True, reasons
-
-        # --- Character level requirement (e.g., "character level 10th", "level 10", "lvl 10") ---
-        m = re.search(r'(?:character\s+level|level|lvl)\s*(\d+)', prereq_low)
-        if m:
-            need = int(m.group(1))
-            if level < need:
-                ok = False
-                reasons.append(f'needs level {need}')
-
-        # --- Base Attack Bonus requirement (heuristic): "base attack bonus +X" ---
-        # We cannot compute exact BAB here (class-dependent), so log and do a soft allow.
-        if re.search(r'base\s+attack\s+bonus\s*[+−-]?\s*(\d+)', prereq_low):
-            reasons.append('BAB prereq present (not enforced here)')
-
-        # --- Race restriction (common PF1e races) ---
-        race_terms = ['human','elf','dwarf','halfling','gnome','half-orc','half-elf','aasimar','tiefling','orc','catfolk','tengu','ratfolk','ifrit','sylph','undine','fetchling','dhampir']
-        mentioned = [r for r in race_terms if r in prereq_low]
-        if mentioned:
-            if str(race).lower() not in prereq_low:
-                ok = False
-                reasons.append(f'race restricted ({", ".join(mentioned)})')
-
-        # --- Ability score prereqs (e.g., "Dex 13", "STR 15") — not enforced here ---
-        if re.search(r'\b(str|dex|con|int|wis|cha)\s*(\d+)', prereq_low):
-            reasons.append('ability prereq present (not enforced here)')
-
-        # --- Feat dependency (very rough heuristic) ---
-        # If the prereq mentions at least one known feat name and none are already chosen, reject.
-        mentioned_feats = [nm for nm in all_feat_names if nm and nm in prereq_low]
-        if mentioned_feats:
-            if not any(nm in chosen_set for nm in mentioned_feats):
-                ok = False
-                # show at most 3 to keep logs readable
-                reasons.append('missing required feat(s): ' + ', '.join(mentioned_feats[:3]))
-
-        return ok, reasons if reasons else ['prereq text found']
-
-    # Try to pick until we have enough feats or we run out
-    pool = feats.copy()
-    random.shuffle(pool)
-    attempts = 0
-    MAX_ATTEMPTS = len(pool) * 3 if pool else 0
-
-    for feat in pool:
-        if len(chosen) >= num_feats:
-            break
-        attempts += 1
-        ok, reasons = prereq_met(feat)
-        ftitle = feat.get('title') or feat.get('name') or 'Unknown'
-        if ok:
-            chosen.append(ftitle)
-            chosen_set.add(ftitle.strip().lower())
-            print(f"[DEBUG] Feat ACCEPTED → {ftitle} | reasons: {', '.join(reasons)}", flush=True)
-        else:
-            print(f"[DEBUG] Feat REJECTED → {ftitle} | reasons: {', '.join(reasons)}", flush=True)
-        if attempts >= MAX_ATTEMPTS and len(chosen) < num_feats:
-            print(f"[DEBUG] Stopping early after {attempts} attempts; picked {len(chosen)}/{num_feats} feats.", flush=True)
-            break
-
-    return chosen
-
-
 # ================================================================
 # Master Working Copy with full functionality (final_sync_rangerfix).py
 # Version: 2025-10-08
-# Author: ChatGPT (assistant to Anthony Falsone / BKI-Applications)
+# Author:(Anthony Falsone / BKI-Applications)
 #
 #Class outputs with full functionality:Rogue, Ranger.
 #
@@ -337,6 +243,100 @@ def get_random_name(race, gender, data):
     first_names = nd.get(f"{g}_first", nd.get("male_first", []))
     last_names = nd.get("last", nd.get("clans", []))
     return f"{choose(first_names)} {choose(last_names)}"
+
+def pick_character_feats(level, race, feats):
+    """
+    Randomly selects feats ensuring prerequisites are met.
+    Emits [DEBUG] logs for both accepted and rejected feats with reasons.
+    Uses prerequisite text from either 'property' or 'prerequisite' fields.
+    """
+    import re, random
+
+    # how many feats to pick (PF1e baseline + human bonus)
+    num_feats = (level // 2) + 1 + (1 if str(race).lower() == 'human' else 0)
+
+    # cache all feat names to detect dependencies
+    all_feat_names = set()
+    for f in feats:
+        nm = (f.get('title') or f.get('name') or '').strip().lower()
+        if nm:
+            all_feat_names.add(nm)
+
+    chosen = []
+    chosen_set = set()
+
+    def prereq_met(feat):
+        reasons = []
+        ok = True
+
+        # normalize text
+        prereq = (feat.get('property') or feat.get('prerequisite') or '').strip()
+        prereq_low = prereq.lower()
+
+        if not prereq or prereq_low in ('none', ''):
+            reasons.append('no prerequisites')
+            return True, reasons
+
+        # --- Character level requirement (e.g., "character level 10th", "level 10", "lvl 10") ---
+        m = re.search(r'(?:character\s+level|level|lvl)\s*(\d+)', prereq_low)
+        if m:
+            need = int(m.group(1))
+            if level < need:
+                ok = False
+                reasons.append(f'needs level {need}')
+
+        # --- Base Attack Bonus requirement (heuristic): "base attack bonus +X" ---
+        # We cannot compute exact BAB here (class-dependent), so log and do a soft allow.
+        if re.search(r'base\s+attack\s+bonus\s*[+−-]?\s*(\d+)', prereq_low):
+            reasons.append('BAB prereq present (not enforced here)')
+
+        # --- Race restriction (common PF1e races) ---
+        race_terms = ['human','elf','dwarf','halfling','gnome','half-orc','half-elf','aasimar','tiefling','orc','catfolk','tengu','ratfolk','ifrit','sylph','undine','fetchling','dhampir']
+        mentioned = [r for r in race_terms if r in prereq_low]
+        if mentioned:
+            if str(race).lower() not in prereq_low:
+                ok = False
+                reasons.append(f'race restricted ({", ".join(mentioned)})')
+
+        # --- Ability score prereqs (e.g., "Dex 13", "STR 15") — not enforced here ---
+        if re.search(r'\b(str|dex|con|int|wis|cha)\s*(\d+)', prereq_low):
+            reasons.append('ability prereq present (not enforced here)')
+
+        # --- Feat dependency (very rough heuristic) ---
+        # If the prereq mentions at least one known feat name and none are already chosen, reject.
+        mentioned_feats = [nm for nm in all_feat_names if nm and nm in prereq_low]
+        if mentioned_feats:
+            if not any(nm in chosen_set for nm in mentioned_feats):
+                ok = False
+                # show at most 3 to keep logs readable
+                reasons.append('missing required feat(s): ' + ', '.join(mentioned_feats[:3]))
+
+        return ok, reasons if reasons else ['prereq text found']
+
+    # Try to pick until we have enough feats or we run out
+    pool = feats.copy()
+    random.shuffle(pool)
+    attempts = 0
+    MAX_ATTEMPTS = len(pool) * 3 if pool else 0
+
+    for feat in pool:
+        if len(chosen) >= num_feats:
+            break
+        attempts += 1
+        ok, reasons = prereq_met(feat)
+        ftitle = feat.get('title') or feat.get('name') or 'Unknown'
+        if ok:
+            chosen.append(ftitle)
+            chosen_set.add(ftitle.strip().lower())
+            print(f"[DEBUG] Feat ACCEPTED → {ftitle} | reasons: {', '.join(reasons)}", flush=True)
+        else:
+            print(f"[DEBUG] Feat REJECTED → {ftitle} | reasons: {', '.join(reasons)}", flush=True)
+        if attempts >= MAX_ATTEMPTS and len(chosen) < num_feats:
+            print(f"[DEBUG] Stopping early after {attempts} attempts; picked {len(chosen)}/{num_feats} feats.", flush=True)
+            break
+
+    return chosen
+
 
 # ------------------------------
 # Character

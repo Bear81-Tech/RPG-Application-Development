@@ -1,0 +1,96 @@
+Name: Mar'MusHeaiel
+Class & Level: Rogue 16
+Race: Elf
+Gender: Female
+Alignment: Chaotic Evil
+HP: 83
+BAB: 12 (+12/+7/+2)
+
+Ability Scores:
+  STR: 14 (+2)
+  DEX: 17 (+3)
+  CON: 13 (+1)
+  INT: 15 (+2)
+  WIS: 10 (+0)
+  CHA: 14 (+2)
+
+Initiative: +3 (Dex +3, Misc +0)
+
+Languages: Common, Elven, Orc, Goblin
+
+Features & Abilities:
+  Lvl 1: Sneak Attack +1d6
+  Lvl 1: Trapfinding
+  Lvl 2: Bleeding Attack
+  Lvl 2: Evasion
+  Lvl 3: Sneak Attack +2d6
+  Lvl 3: Trap Sense +1
+  Lvl 4: Trap Spotter
+  Lvl 4: Uncanny Dodge
+  Lvl 5: Sneak Attack +3d6
+  Lvl 6: Quick Disable
+  Lvl 6: Trap Sense +2
+  Lvl 7: Sneak Attack +4d6
+  Lvl 8: Fast Stealth
+  Lvl 8: Improved Uncanny Dodge
+  Lvl 9: Sneak Attack +5d6
+  Lvl 10: Skill Mastery
+  Lvl 10: Stand Up
+  Lvl 11: Sneak Attack +6d6
+  Lvl 12: Surprise Attack
+  Lvl 13: Sneak Attack +7d6
+  Lvl 14: Combat Trick
+  Lvl 15: Sneak Attack +8d6
+  Lvl 16: Weapon Training
+
+Feats:
+  Second Chance
+  Improved Critical
+  Seen and Unseen
+  Uncanny Defense
+  Cosmopolitan
+  Intimidating Confidence
+  Critical Mastery
+  Groundling
+  Self-Sufficient
+
+Skills:
+  Acrobatics: Total +8 (Ranks:2, Mod:+3, Class:3)
+  Bluff: Total +7 (Ranks:2, Mod:+2, Class:3)
+  Climb: Total +8 (Ranks:3, Mod:+2, Class:3)
+  Diplomacy: Total +9 (Ranks:4, Mod:+2, Class:3)
+  Disable Device: Total +9 (Ranks:3, Mod:+3, Class:3)
+  Escape Artist: Total +8 (Ranks:2, Mod:+3, Class:3)
+  Handle Animal: Total +3 (Ranks:1, Mod:+2, Class:0)
+  Heal: Total +5 (Ranks:5, Mod:+0, Class:0)
+  Intimidate: Total +10 (Ranks:5, Mod:+2, Class:3)
+  Knowledge:Arcana: Total +3 (Ranks:1, Mod:+2, Class:0)
+  Knowledge:Dungeoneering: Total +9 (Ranks:4, Mod:+2, Class:3)
+  Knowledge:Engineering: Total +2 (Ranks:0, Mod:+2, Class:0)
+  Knowledge:Geography: Total +4 (Ranks:2, Mod:+2, Class:0)
+  Knowledge:History: Total +2 (Ranks:0, Mod:+2, Class:0)
+  Knowledge:Local: Total +11 (Ranks:6, Mod:+2, Class:3)
+  Knowledge:Nature: Total +5 (Ranks:3, Mod:+2, Class:0)
+  Knowledge:Nobility: Total +3 (Ranks:1, Mod:+2, Class:0)
+  Knowledge:Planes: Total +5 (Ranks:3, Mod:+2, Class:0)
+  Knowledge:Religion: Total +3 (Ranks:1, Mod:+2, Class:0)
+  Open Lock: Total +3 (Ranks:0, Mod:+3, Class:0)
+  Perception: Total +8 (Ranks:5, Mod:+0, Class:3)
+  Ride: Total +3 (Ranks:0, Mod:+3, Class:0)
+  Spellcraft: Total +4 (Ranks:2, Mod:+2, Class:0)
+  Stealth: Total +10 (Ranks:4, Mod:+3, Class:3)
+  Survival: Total +1 (Ranks:1, Mod:+0, Class:0)
+  Use Magic Device: Total +7 (Ranks:2, Mod:+2, Class:3)
+
+  -- Craft Skills --
+    Armor: Total +8 (Ranks:3, Mod:+2, Class:3)
+    Traps: Total +9 (Ranks:4, Mod:+2, Class:3)
+    Woodworking: Total +10 (Ranks:5, Mod:+2, Class:3)
+
+  -- Perform Skills --
+    Act: Total +7 (Ranks:2, Mod:+2, Class:3)
+    Comedy: Total +7 (Ranks:2, Mod:+2, Class:3)
+
+  -- Profession Skills --
+    Farming: Total +7 (Ranks:4, Mod:+0, Class:3)
+    Merchant: Total +7 (Ranks:4, Mod:+0, Class:3)

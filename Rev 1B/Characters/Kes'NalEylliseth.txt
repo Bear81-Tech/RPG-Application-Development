@@ -1,0 +1,95 @@
+Name: Kes'NalEylliseth
+Class & Level: Ranger 15
+Race: Elf
+Gender: Female
+Alignment: Chaotic Evil
+HP: 108
+BAB: 15 (+15/+10/+5)
+
+Ability Scores:
+  STR: 13 (+1)
+  DEX: 16 (+3)
+  CON: 14 (+2)
+  INT: 11 (+0)
+  WIS: 11 (+0)
+  CHA: 15 (+2)
+
+Initiative: +3 (Dex +3, Misc +0)
+
+Languages: Common, Elven
+
+Features & Abilities:
+  Lvl 1: Dragon
+  Lvl 1: Track
+  Lvl 1: Wild Empathy
+  Lvl 2: Combat Style – Two-Weapon Fighting
+  Lvl 2: Two-Weapon Fighting
+  Lvl 2: Combat Style – Two-Weapon Fighting
+  Lvl 2: Combat Style Feat
+  Lvl 3: Endurance
+  Lvl 3: Swamp
+  Lvl 4: Hunter's Bond
+  Lvl 5: Humanoid (Gnome)
+  Lvl 6: Double Slice
+  Lvl 7: Woodland Stride
+  Lvl 8: Water
+  Lvl 8: Swift Tracker
+  Lvl 9: Evasion
+  Lvl 10: Animal
+  Lvl 11: Quarry
+  Lvl 12: Improved Two-Weapon Fighting
+  Lvl 12: Camouflage
+  Lvl 13: Jungle
+  Lvl 14: Greater Two-Weapon Fighting
+  Lvl 15: Humanoid (Human)
+
+Feats:
+  Disrupting Shot
+  Gnome Trickster
+  Stunning Critical
+  Improved Disarm
+  Greater Weapon Of The Chosen
+  Wind Stance
+  Twinned Feint
+  Improved Low Blow
+
+Skills:
+  Acrobatics: Total +4 (Ranks:1, Mod:+3, Class:0)
+  Bluff: Total +3 (Ranks:1, Mod:+2, Class:0)
+  Climb: Total +11 (Ranks:7, Mod:+1, Class:3)
+  Diplomacy: Total +2 (Ranks:0, Mod:+2, Class:0)
+  Disable Device: Total +4 (Ranks:1, Mod:+3, Class:0)
+  Escape Artist: Total +6 (Ranks:3, Mod:+3, Class:0)
+  Handle Animal: Total +2 (Ranks:0, Mod:+2, Class:0)
+  Heal: Total +0 (Ranks:0, Mod:+0, Class:0)
+  Intimidate: Total +8 (Ranks:3, Mod:+2, Class:3)
+  Knowledge:Arcana: Total +1 (Ranks:1, Mod:+0, Class:0)
+  Knowledge:Dungeoneering: Total +6 (Ranks:3, Mod:+0, Class:3)
+  Knowledge:Engineering: Total +3 (Ranks:3, Mod:+0, Class:0)
+  Knowledge:Geography: Total +5 (Ranks:2, Mod:+0, Class:3)
+  Knowledge:History: Total +0 (Ranks:0, Mod:+0, Class:0)
+  Knowledge:Local: Total +0 (Ranks:0, Mod:+0, Class:0)
+  Knowledge:Nature: Total +7 (Ranks:4, Mod:+0, Class:3)
+  Knowledge:Nobility: Total +1 (Ranks:1, Mod:+0, Class:0)
+  Knowledge:Planes: Total +0 (Ranks:0, Mod:+0, Class:0)
+  Knowledge:Religion: Total +2 (Ranks:2, Mod:+0, Class:0)
+  Open Lock: Total +3 (Ranks:0, Mod:+3, Class:0)
+  Perception: Total +6 (Ranks:3, Mod:+0, Class:3)
+  Ride: Total +7 (Ranks:1, Mod:+3, Class:3)
+  Spellcraft: Total +6 (Ranks:3, Mod:+0, Class:3)
+  Stealth: Total +11 (Ranks:5, Mod:+3, Class:3)
+  Survival: Total +7 (Ranks:4, Mod:+0, Class:3)
+  Use Magic Device: Total +2 (Ranks:0, Mod:+2, Class:0)
+
+  -- Craft Skills --
+    Armor: Total +5 (Ranks:2, Mod:+0, Class:3)
+    Pottery: Total +6 (Ranks:3, Mod:+0, Class:3)
+    Weapons: Total +5 (Ranks:2, Mod:+0, Class:3)
+
+  -- Perform Skills --
+    Act: Total +3 (Ranks:1, Mod:+2, Class:0)
+    Comedy: Total +4 (Ranks:2, Mod:+2, Class:0)
+
+  -- Profession Skills --
+    Farming: Total +5 (Ranks:2, Mod:+0, Class:3)
+    Merchant: Total +4 (Ranks:1, Mod:+0, Class:3)
